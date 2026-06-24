@@ -42,7 +42,7 @@ const blogPosts = [
   { meta: "Systems · 7 min read", title: "Real-Time Coordination With Go and WebSockets", desc: "Notes from building a location pipeline that has to stay up when everything else is down." }
 ];
 
-/* ====================== RENDER: SKILLS ====================== */
+/* RENDER: SKILLS */
 const skillsGrid = document.getElementById('skillsGrid');
 Object.entries(skills).forEach(([category, items]) => {
   const card = document.createElement('div');
@@ -54,7 +54,7 @@ Object.entries(skills).forEach(([category, items]) => {
   skillsGrid.appendChild(card);
 });
 
-/* ====================== RENDER: PROJECTS ====================== */
+/* RENDER: PROJECTS */
 const projectsGrid = document.getElementById('projectsGrid');
 projects.forEach((project, idx) => {
   const card = document.createElement('div');
@@ -68,7 +68,7 @@ projects.forEach((project, idx) => {
   projectsGrid.appendChild(card);
 });
 
-/* ====================== RENDER: BLOG ====================== */
+/* RENDER: BLOG */
 const blogGrid = document.getElementById('blogGrid');
 blogPosts.forEach(post => {
   const card = document.createElement('div');
@@ -82,7 +82,7 @@ blogPosts.forEach(post => {
   blogGrid.appendChild(card);
 });
 
-/* ====================== PROJECT MODAL ====================== */
+/* PROJECT MODAL */
 const modalOverlay = document.getElementById('modalOverlay');
 const modalTitle = document.getElementById('modalTitle');
 const modalChallenge = document.getElementById('modalChallenge');
@@ -103,11 +103,11 @@ document.getElementById('modalClose').addEventListener('click', () => modalOverl
 modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) modalOverlay.classList.remove('is-open'); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') modalOverlay.classList.remove('is-open'); });
 
-/* ====================== TERMINAL TYPE EFFECT ====================== */
+/* TERMINAL TYPE EFFECT */
 const terminalLines = [
-  { cmd: "whoami", out: "David Nyongesa" },
-  { cmd: "cat role.txt", out: "Full-Stack Software Engineer" },
-  { cmd: "echo $FOCUS", out: "scalable systems · AI integration" }
+  { cmd: "Who am I", out: "David M. Nyongesa" },
+  { cmd: "Profession", out: "Full-Stack Software Engineer" },
+  { cmd: "FOCUS", out: "scalable systems · AI integration" }
 ];
 const terminalBody = document.getElementById('terminalBody');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -148,9 +148,9 @@ function typeTerminal(){
 }
 typeTerminal();
 
-/* ====================== GITHUB STATS (live, public API) ====================== */
+/* GITHUB STATS (live, public API) */
 // Replace with your real GitHub username to make this live.
-const GITHUB_USERNAME = "yourusername";
+const GITHUB_USERNAME = "David-M-Nyongesa";
 async function loadGithubStats(){
   const wrap = document.getElementById('ghStats');
   const note = document.getElementById('ghNote');
@@ -170,7 +170,7 @@ async function loadGithubStats(){
 }
 loadGithubStats();
 
-/* ====================== THEME TOGGLE (in-memory, no storage) ====================== */
+/* THEME TOGGLE (in-memory, no storage) */
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = document.getElementById('themeIcon');
 let currentTheme = 'dark';
@@ -182,13 +182,13 @@ themeToggle.addEventListener('click', () => {
     : '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>';
 });
 
-/* ====================== MOBILE NAV ====================== */
+/* MOBILE NAV */
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 navToggle.addEventListener('click', () => navLinks.classList.toggle('is-open'));
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('is-open')));
 
-/* ====================== SCROLL REVEAL ====================== */
+/* SCROLL REVEAL */
 const revealEls = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window && !reduceMotion){
   const io = new IntersectionObserver(entries => {
@@ -199,7 +199,7 @@ if ('IntersectionObserver' in window && !reduceMotion){
   revealEls.forEach(el => el.classList.add('is-visible'));
 }
 
-/* ====================== CONTACT FORM -> MAILTO ====================== */
+/* CONTACT FORM -> MAIL-TO */
 document.getElementById('contactForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const name = document.getElementById('cf-name').value;
@@ -210,7 +210,7 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
   window.location.href = `mailto:davymnyongesa@gmail.com?subject=${subject}&body=${body}`;
 });
 
-/* ====================== CHATBOT ====================== */
+/* CHATBOT */
 const chatFab = document.getElementById('chatFab');
 const chatPanel = document.getElementById('chatPanel');
 const chatClose = document.getElementById('chatClose');
@@ -256,11 +256,5 @@ function sendChat(){
 chatSend.addEventListener('click', sendChat);
 chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') sendChat(); });
 
-/* ====================== FOOTER YEAR ====================== */
+/* FOOTER YEAR */
 document.getElementById('year').textContent = new Date().getFullYear();
-
-/* ====================== ANALYTICS (placeholder) ======================
-   No tracking is wired up by default. If you add an analytics provider
-   (Plausible, Vercel Analytics, GA4, etc.), drop its script tag in <head>
-   and/or call a trackPageView()-style function here on load.
-======================================================================= */
