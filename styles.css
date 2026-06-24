@@ -181,7 +181,7 @@
   }
   .badge:hover{ border-color:var(--accent); color:var(--accent); }
 
-  /* ====================== SECTIONS GENERIC ====================== */
+  /* SECTIONS GENERIC */
   .section{ padding:108px 0; border-top:1px solid var(--border); }
   .section-head{ margin-bottom:48px; max-width:640px; }
   .section-head h2{ font-size:clamp(28px, 4vw, 38px); margin-top:10px; }
