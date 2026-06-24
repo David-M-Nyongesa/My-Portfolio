@@ -96,7 +96,7 @@
     *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
   }
 
-  /* ====================== NAV ====================== */
+  /* NAV */
   .nav{
     position:fixed; top:0; left:0; right:0; z-index:100;
     background:rgba(10,11,13,0.72); backdrop-filter:blur(10px);
@@ -131,7 +131,7 @@
     .nav-toggle{ display:flex; }
   }
 
-  /* ====================== HERO ====================== */
+  /* HERO */
   .hero{
     min-height:100vh; display:flex; align-items:center;
     padding:120px 0 64px; position:relative; overflow:hidden;
